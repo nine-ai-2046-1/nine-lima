@@ -65,8 +65,10 @@ vmType: vz
 networks: []
 
 networkOpts:
-  # 嚴格禁止 Guest 存取 Mac 主機的 127.0.0.1 服務 (防範惡意探測)
-  hostLoopback: false
+  # 解鎖（對應指南 05「逐樣解鎖」場景）：允許 Guest 經 NAT 存取 Mac 主機
+  # 127.0.0.1 上嘅服務，例如本機 Clash 代理 (127.0.0.1:7890)。
+  # 代價：VM 內程式亦可連到 Mac 本地服務。要回復嚴格隔離改返 false 並重啟 VM。
+  hostLoopback: true
 
 # 4. 存儲隔離：僅掛載單一指定資料夾，且強制唯讀
 mounts:
