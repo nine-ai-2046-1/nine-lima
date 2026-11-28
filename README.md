@@ -1,2 +1,2 @@
 # nine-lima
-Lima guide and use cases
+Follow guides/toc.md to start
